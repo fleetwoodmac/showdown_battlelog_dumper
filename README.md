@@ -20,6 +20,7 @@ Made with Python 3.7.7
   - This might take a while depending on how many replays you give it, just be patient!
   
   
-  4. You're done!
+4. Script will dump battle logs based on selection.
+5. You're done!
 
  
