@@ -1,5 +1,5 @@
 # showdown_battlelog_dumper
-A Python script to dump battle logs of battle replays in .txt files from Pokemon Showdown.
+A simple Python script to dump battle logs of battle replays in .txt files from Pokemon Showdown.
 Made with Python 3.7.7
 
 
