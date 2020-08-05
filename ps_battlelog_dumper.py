@@ -6,7 +6,7 @@ import requests
 def separate_files():
     # generates separate battle log text files per replay in input text file
     i = 0
-    for i in range(0, len(line_array_new)-1):
+    for i in range(0, len(line_array_new)):
         url = line_array_new[i] # extract url from array containing lines with .log at end
         req = requests.get(url) # request from server, store
         with open('{}.txt'.format(i), 'w', encoding='utf-8', errors='ignore') as final_file: # names files 0-n, n being last replay -1 cause python indeces
@@ -19,7 +19,7 @@ def long_file():
     # separates each replay battle log entry with "Battle Log number "x" from "replay url" and 3 empty new lines
     i = 0    
     with open('battle_logs.txt', 'w', encoding='utf-8', errors='ignore') as final_file:   # names file battle_logs
-        for i in range(0, len(line_array_new)-1):
+        for i in range(0, len(line_array_new)):
             url = line_array_new[i]
             req = requests.get(url)
             final_file.write('Battle Log number {}'.format(i) + ' pulled from {}'.format(line_array_new[i]) + '\n\n\n')
@@ -41,7 +41,7 @@ with open(file_name + ".txt", 'r' ) as file_obj: # open file as condition to ite
 
 line_array_new = [] # initialize new line array for new URLs
 
-for i in range(0, len(line_array)-1):
+for i in range(0, len(line_array)):
    line_array_new.append(line_array[i] + ".log") # add ".log" to each replay url, store in new list
 
 
@@ -52,4 +52,4 @@ types = {"1": separate_files, "2": long_file} # defines dictionary to call funct
 
 selector = input('Enter 1 for separate text files or 2 for one large text file: ') # take input
 
-types[selector]() # run function
+types[selector]() # run function              
